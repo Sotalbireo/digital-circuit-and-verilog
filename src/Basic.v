@@ -10,7 +10,7 @@ module Basic;
 	// --- おまじないここまで ---
 
 	wire w_x;
-	assign w_x = r_a;
+	assign w_x = ~r_a;
 
 	// --- おまじないここから ---
 	initial begin
