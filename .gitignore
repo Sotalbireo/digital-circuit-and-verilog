@@ -1,0 +1,4 @@
+# iverilog成果物
+*.out
+# vvp成果物
+*.vcd

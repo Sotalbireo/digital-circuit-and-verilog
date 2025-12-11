@@ -1,0 +1,30 @@
+{
+	"name": "Verilog",
+	"build": {
+		"dockerfile": "Containerfile",
+		"context": ".."
+	},
+	"workspaceFolder": "/src",
+	"features": {
+		"ghcr.io/devcontainers-extra/features/go-task": "latest"
+	},
+	"forwardPorts": [],
+	"postCreateCommand": "task --version",
+	"remoteUser": "vscode",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"EditorConfig.EditorConfig",
+				"mshr-h.veriloghdl",
+				"task.vscode-task"
+			]
+		}
+	},
+	"mounts": [
+		{
+			"source": "./",
+			"target": "/src",
+			"type": "bind"
+		}
+	]
+}
