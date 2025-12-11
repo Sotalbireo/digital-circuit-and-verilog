@@ -3,6 +3,17 @@ version: '3'
 
 tasks:
   build:
+    dir: ./src
+    deps:
+      - build:container
     cmds:
-      - echo "wip"
+      - docker run --rm -v $(pwd):/work -w /work digital-circuit-verilog iverilog {{.CLI_ARGS}}
+      - docker run --rm -v $(pwd):/work -w /work digital-circuit-verilog vvp a.out
+    silent: true
+
+  build:container:
+    cmds:
+      - docker build -f .devcontainer/Containerfile -t digital-circuit-verilog .
+    status:
+      - docker image inspect digital-circuit-verilog >/dev/null 2>&1
     silent: true
