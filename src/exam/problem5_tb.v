@@ -1,4 +1,4 @@
-module problem5_tv;
+module problem5_tb;
 	reg  [15:0] i_data_0 = 16'h0000;
 	reg  [15:0] i_data_1 = 16'h00ff;
 	reg  [15:0] i_data_2 = 16'hff00;
